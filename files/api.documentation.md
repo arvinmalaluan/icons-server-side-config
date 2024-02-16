@@ -7,7 +7,7 @@ Greetings! We're thrilled to have you explore our API documentation. This compre
 ## Endpoints
 | Endpoints          | HTTP Methods | Purpose      |
 |---------------|-----|-----------------|
-| [/auth](#auth)      | POST  | This endpoint serves the purpose of enabling user authentication, allowing users to securely access and interact with our services.|
+| <a name="auth-top" href="#">[/auth](#auth)<a />      | POST  | This endpoint serves the purpose of enabling user authentication, allowing users to securely access and interact with our services.|
 | [/community](#community)    | GET, POST, PATCH  | Manages community-related operations. Include the following `creating community post`, `editing their post`, `getting engagement (in form of likes and comments)`. |
 
-### <a name="auth" href="#">[1]<a /> Authentication
+### <a name="auth" href="#auth-top">[1]<a /> Authentication
