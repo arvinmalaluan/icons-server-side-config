@@ -20,7 +20,7 @@ The Icons Server-side Configuration project, employing a hybrid approach blendin
 3. Set up the database schema using the provided ERD: [ERD Diagram](img/erd.png)
 
 ## Database Schema
-![ERD Diagram]([link-to-erd-diagram](img/erd.png)
+![ERD Diagram](img/erd.png)
 
 The database schema is designed according to the Entity-Relationship Diagram (ERD). It consists of tables for startups, partners, users, and collaboration relationships.
 
