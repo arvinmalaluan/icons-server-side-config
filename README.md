@@ -17,10 +17,10 @@ The Icons Server-side Configuration project, employing a hybrid approach blendin
 ## Installation
 1. Clone the repository using the command below: <br /> `[git clone https://github.com/yourusername/icons-backend.git](https://github.com/arvinmalaluan/icons-server-side-config.git)`
 2. Install dependencies: <br /> `npm install`
-3. Set up the database schema using the provided ERD: [ERD Diagram]([link-to-erd-diagram](https://github.com/arvinmalaluan/icons-server-side-config/blob/main/img/erd.png))
+3. Set up the database schema using the provided ERD: [ERD Diagram](img/erd.png)
 
 ## Database Schema
-![ERD Diagram]([link-to-erd-diagram](https://github.com/arvinmalaluan/icons-server-side-config/blob/main/img/erd.png))
+![ERD Diagram]([link-to-erd-diagram](img/erd.png)
 
 The database schema is designed according to the Entity-Relationship Diagram (ERD). It consists of tables for startups, partners, users, and collaboration relationships.
 
