@@ -24,6 +24,12 @@ The Icons Server-side Configuration project, employing a hybrid approach blendin
 
 The database schema is designed according to the Entity-Relationship Diagram (ERD). It consists of tables for startups, partners, users, and collaboration relationships.
 
+### How to run on a local server?
+1. Open XAMPP, then click `start` for `Apache` and `MySQL`.
+2. Open browser and navigate to this site `http://localhost/phpmyadmin/`.
+3. Click `SQL` located at the `Navigation Bar`.
+4. Paste the script found in [ERD Diagram](img/erd.png) and click **`Go`**
+
 ## API Documentation
 Explore the API endpoints provided by the Icons Backend:
 - Endpoint URLs: [API Documentation](link-to-postman-docs)
