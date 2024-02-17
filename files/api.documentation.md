@@ -2,8 +2,9 @@
 
 Greetings! We're thrilled to have you explore our API documentation. This comprehensive guide is designed to provide detailed insights into every available endpoint, their specific purposes, the corresponding HTTP methods, and the expected payload for seamless integration with our services. Let's dive in and discover how our API can empower your applications!
 
-**Note:** This uses url path `base_url/api/v1`
+;^1
 
+**Note:** This uses url path `base_url/api/v1` 
 <br />
 
 ## Endpoints
@@ -13,6 +14,8 @@ Greetings! We're thrilled to have you explore our API documentation. This compre
 | <a name="community-top" href="#">[/community](#community)<a />    | GET, POST, PATCH  | Manages community-related operations. Include the following `creating community post`, `editing their post`, `getting engagement (in form of likes and comments)`. |
 
 <br />
+
+### Community <a name="community">[[2]](#community-top)<a />
 
 ### Authentication <sup><a name="auth">[[1]](#auth-top)<a /></sup>
 
