@@ -2,8 +2,6 @@
 
 Greetings! We're thrilled to have you explore our API documentation. This comprehensive guide is designed to provide detailed insights into every available endpoint, their specific purposes, the corresponding HTTP methods, and the expected payload for seamless integration with our services. Let's dive in and discover how our API can empower your applications!
 
-;^1
-
 **Note:** This uses url path `base_url/api/v1` 
 <br />
 
@@ -14,8 +12,6 @@ Greetings! We're thrilled to have you explore our API documentation. This compre
 | <a name="community-top" href="#">[/community](#community)<a />    | GET, POST, PATCH  | Manages community-related operations. Include the following `creating community post`, `editing their post`, `getting engagement (in form of likes and comments)`. |
 
 <br />
-
-### Community <a name="community">[[2]](#community-top)<a />
 
 ### Authentication <sup><a name="auth">[[1]](#auth-top)<a /></sup>
 
@@ -48,7 +44,7 @@ This is an example payload for `/signin` endpoint used forsigning in or logging 
 
 <br />
 
-### Community <sup><a name="community">[[2]](#community-top)<a /></sup>
+### Community <a name="community"><a /> [[2]](#community-top)
 
 **Brief Overview:**
 <br/>The endpoint is specifically designated for the community and will encompass child routes for actions such as posting, commenting, and liking a post.
