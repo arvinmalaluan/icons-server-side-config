@@ -2,7 +2,7 @@
 
 Greetings! We're thrilled to have you explore our API documentation. This comprehensive guide is designed to provide detailed insights into every available endpoint, their specific purposes, the corresponding HTTP methods, and the expected payload for seamless integration with our services. Let's dive in and discover how our API can empower your applications!
 
-**Note:** This uses url path `base_url/api/v1` 
+> <sub>**Note:** This uses url path `base_url/api/v1`</sub>  
 <br />
 
 ## Endpoints
@@ -25,7 +25,9 @@ This specific API endpoint has been meticulously crafted to fulfill the essentia
 **Child routes for /auth endpoint:** <br/>
 This is an example payload for `/signup` endpoint used for signing up or registering.
 
-```html
+```javascript
+// "/signup" child route
+
 {
     "email": "malaluanofficial16@gmail.com",
     "pass": "startups",
@@ -59,15 +61,26 @@ This is an example payload for `/signin` endpoint used forsigning in or logging 
 <br /> **Parent Route:** `/post` <br/> 
 **Child Routes**
 
+> `GET Method` <br />
+> / <br />
+> /:condition <br />
+> /engage <br />
+> /comment <br />
+> /comment/:condition <br />
 
-| HTTP Method   |Child Routes                                                       | Description  |
-|:------------- |:------------------------------------------------------------------|:------------- |
-|`GET`          |/<br/>/:condition<br/>/engage<br/>/comment<br/>/comment/:condition |_For getting all posts._ <br/> _For getting all posts that meets the condition/s._ <br/> _For getting all engagement under the form of upvotes/downvotes._ <br/> _For getting all comments._ <br/> _For getting all comments under a condition._ |
-|`POST`         |/<br/>/engage<br/>/comment                                         ||
-|`PATCH`        |/:id<br/>/engage/:id<br/>/comment/:id                              ||
-|`DELETE`       |/:id<br/>/comment/:id                                              ||
+> `POST Method` <br />
+> / <br />
+> /:condition <br />
+> /engage <br />
 
+> `PATCH Method` <br />
+> /:id <br />
+> /engage/:id <br />
+> /comment/:id <br />
 
+> `DELETE Method` <br />
+> /:id <br />
+> /comment/:id <br />
 
 **Child routes for /auth endpoint:** <br/>
 This is an example payload for `/signup` endpoint used for signing up or registering.
@@ -88,3 +101,11 @@ This is an example payload for `/signin` endpoint used forsigning in or logging 
     "pass": "startups"
 }
 ```
+
+
+| HTTP Method   |Child Routes                                                       | Description  |
+|:------------- |:------------------------------------------------------------------|:------------- |
+|`GET`          |/<br/>/:condition<br/>/engage<br/>/comment<br/>/comment/:condition |_For getting all posts._ <br/> _For getting all posts that meets the condition/s._ <br/> _For getting all engagement under the form of upvotes/downvotes._ <br/> _For getting all comments._ <br/> _For getting all comments under a condition._ |
+|`POST`         |/<br/>/engage<br/>/comment                                         ||
+|`PATCH`        |/:id<br/>/engage/:id<br/>/comment/:id                              ||
+|`DELETE`       |/:id<br/>/comment/:id                                              ||
