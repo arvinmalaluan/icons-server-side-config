@@ -14,9 +14,27 @@ Greetings! We're thrilled to have you explore our API documentation. This compre
 
 **Brief Overview:** <br />
 This specific API endpoint has been meticulously crafted to fulfill the essential function of facilitating user authentication. Its primary objective is to empower users by providing a secure mechanism for accessing and actively engaging with our suite of services. By leveraging this endpoint, users can seamlessly authenticate their identities, ensuring a robust and protected interaction with our platform.
-- The `POST` method was employed in this endpoint as it required obtaining information from the user, be it user login credentials for sign-in or for sign-up.
 
+| HTTP Method | Description |
+|--------|-------------|
+|`POST`|The `POST` method was employed in this endpoint as it required obtaining information from the user, be it user login credentials for sign-in or for sign-up.|
 
+**Child routes for /auth endpoint:**
+
+This is an example payload for `/signup` endpoint used for signing up or registering.
 ```html
-copy what is inside
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups",
+    "role": "2",
+    "name": "University of Batangas"
+}
+```
+
+This is an example payload for `/signin` endpoint used forsigning in or logging in.
+```html
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
 ```
