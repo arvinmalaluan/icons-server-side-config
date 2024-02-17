@@ -1,3 +1,16 @@
+<details>
+<summary>My section header in bold</summary>
+    
+```javascript
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups",
+    "role": "2",
+    "name": "University of Batangas"
+}
+```
+</details>
+
 # API Documentation
 
 Greetings! We're thrilled to have you explore our API documentation. This comprehensive guide is designed to provide detailed insights into every available endpoint, their specific purposes, the corresponding HTTP methods, and the expected payload for seamless integration with our services. Let's dive in and discover how our API can empower your applications!
@@ -23,11 +36,11 @@ This specific API endpoint has been meticulously crafted to fulfill the essentia
 |`POST`|The `POST` method was employed in this endpoint as it required obtaining information from the user, be it user login credentials for sign-in or for sign-up.|
 
 **Child routes for /auth endpoint:** <br/>
-This is an example payload for `/signup` endpoint used for signing up or registering.
 
+<details>
+<summary>This is an example payload for `/signup` endpoint used for signing up or registering.</summary>
+    
 ```javascript
-// "/signup" child route
-
 {
     "email": "malaluanofficial16@gmail.com",
     "pass": "startups",
@@ -35,14 +48,20 @@ This is an example payload for `/signup` endpoint used for signing up or registe
     "name": "University of Batangas"
 }
 ```
+</details>
 
-This is an example payload for `/signin` endpoint used forsigning in or logging in.
-```html
+<details>
+<summary>This is an example payload for `/signin` endpoint used forsigning in or logging in.</summary>
+    
+```javascript
 {
     "email": "malaluanofficial16@gmail.com",
     "pass": "startups"
 }
 ```
+</details>
+
+
 
 <br />
 
@@ -59,53 +78,91 @@ This is an example payload for `/signin` endpoint used forsigning in or logging 
 |`DELETE`|The `DELETE` method was employed in this endpoint because user will have the ability to delete their actions.|
 
 <br /> **Parent Route:** `/post` <br/> 
-**Child Routes**
-
-> `GET Method` <br />
-> / <br />
-> /:condition <br />
-> /engage <br />
-> /comment <br />
-> /comment/:condition <br />
-
-> `POST Method` <br />
-> / <br />
-> /:condition <br />
-> /engage <br />
-
-> `PATCH Method` <br />
-> /:id <br />
-> /engage/:id <br />
-> /comment/:id <br />
-
-> `DELETE Method` <br />
-> /:id <br />
-> /comment/:id <br />
 
 **Child routes for /auth endpoint:** <br/>
 This is an example payload for `/signup` endpoint used for signing up or registering.
 
-```html
-{
-    "email": "malaluanofficial16@gmail.com",
-    "pass": "startups",
-    "role": "2",
-    "name": "University of Batangas"
-}
-```
 
-This is an example payload for `/signin` endpoint used forsigning in or logging in.
-```html
+
+<details>
+<summary>These are example payloads for `/post` child route used for posts-related actions.</summary><br />
+
+**Endpoint:** {{base_url}}/post
+```javascript
+// GET Method
 {
     "email": "malaluanofficial16@gmail.com",
     "pass": "startups"
 }
 ```
 
+**Endpoint:** {{base_url}}/post/:condition
+```javascript
+// GET Method with Condition
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
+```
 
-| HTTP Method   |Child Routes                                                       | Description  |
-|:------------- |:------------------------------------------------------------------|:------------- |
-|`GET`          |/<br/>/:condition<br/>/engage<br/>/comment<br/>/comment/:condition |_For getting all posts._ <br/> _For getting all posts that meets the condition/s._ <br/> _For getting all engagement under the form of upvotes/downvotes._ <br/> _For getting all comments._ <br/> _For getting all comments under a condition._ |
-|`POST`         |/<br/>/engage<br/>/comment                                         ||
-|`PATCH`        |/:id<br/>/engage/:id<br/>/comment/:id                              ||
-|`DELETE`       |/:id<br/>/comment/:id                                              ||
+> **Endpoint:** {{base_url}}/post
+```javascript
+// POST Method
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
+```
+
+**Endpoint:** {{base_url}}/post/:id
+```javascript
+// PATCH Method
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
+```
+
+**Endpoint:** {{base_url}}/post/:id
+```javascript
+// DELETE Method
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
+```
+
+</details>
+
+<details>
+<summary>This is an example payload for `/signin` endpoint used forsigning in or logging in.</summary>
+    
+```javascript
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
+```
+</details>
+
+<details>
+<summary>This is an example payload for `/signin` endpoint used forsigning in or logging in.</summary>
+    
+```javascript
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
+```
+</details>
+
+<details>
+<summary>This is an example payload for `/signin` endpoint used forsigning in or logging in.</summary>
+    
+```javascript
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
+```
+</details>
