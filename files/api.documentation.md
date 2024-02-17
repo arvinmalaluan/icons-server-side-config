@@ -45,7 +45,7 @@ This is an example payload for `/signin` endpoint used forsigning in or logging 
 
 <br />
 
-### Authentication <sup><a name="auth">[[1]](#auth-top)<a /></sup>
+### Community <sup><a name="community">[[2]](#community-top)<a /></sup>
 
 **Brief Overview:**
 <br/>The endpoint is specifically designated for the community and will encompass child routes for actions such as posting, commenting, and liking a post.
