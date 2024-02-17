@@ -13,7 +13,7 @@ Greetings! We're thrilled to have you explore our API documentation. This compre
 
 <br />
 
-### Authentication <sup><a name="auth">[[1]](#auth-top)<a /></sup>
+### [<a name="auth">Authentication<a />](#auth-top)
 
 **Brief Overview:** <br />
 This specific API endpoint has been meticulously crafted to fulfill the essential function of facilitating user authentication. Its primary objective is to empower users by providing a secure mechanism for accessing and actively engaging with our suite of services. By leveraging this endpoint, users can seamlessly authenticate their identities, ensuring a robust and protected interaction with our platform.
@@ -44,7 +44,7 @@ This is an example payload for `/signin` endpoint used forsigning in or logging 
 
 <br />
 
-### Community <a name="community"><a /> [[2]](#community-top)
+### [<a name="community">Community<a />](#community-top)
 
 **Brief Overview:**
 <br/>The endpoint is specifically designated for the community and will encompass child routes for actions such as posting, commenting, and liking a post.
