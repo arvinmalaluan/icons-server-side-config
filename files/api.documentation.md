@@ -1,16 +1,3 @@
-<details>
-<summary>My section header in bold</summary>
-    
-```javascript
-{
-    "email": "malaluanofficial16@gmail.com",
-    "pass": "startups",
-    "role": "2",
-    "name": "University of Batangas"
-}
-```
-</details>
-
 # API Documentation
 
 Greetings! We're thrilled to have you explore our API documentation. This comprehensive guide is designed to provide detailed insights into every available endpoint, their specific purposes, the corresponding HTTP methods, and the expected payload for seamless integration with our services. Let's dive in and discover how our API can empower your applications!
@@ -85,9 +72,9 @@ This is an example payload for `/signup` endpoint used for signing up or registe
 
 
 <details>
-<summary>These are example payloads for `/post` child route used for posts-related actions.</summary><br />
+<summary>These are example payloads for `/post` child route used for posts-related actions.</summary>
 
-**Endpoint:** {{base_url}}/post
+<sub>**Endpoint:** {{base_url}}/post</sub>
 ```javascript
 // GET Method
 {
@@ -96,7 +83,7 @@ This is an example payload for `/signup` endpoint used for signing up or registe
 }
 ```
 
-**Endpoint:** {{base_url}}/post/:condition
+<sub>**Endpoint:** {{base_url}}/post/:condition</sub>
 ```javascript
 // GET Method with Condition
 {
@@ -105,7 +92,7 @@ This is an example payload for `/signup` endpoint used for signing up or registe
 }
 ```
 
-> **Endpoint:** {{base_url}}/post
+<sub>**Endpoint:** {{base_url}}/post</sub>
 ```javascript
 // POST Method
 {
@@ -114,7 +101,7 @@ This is an example payload for `/signup` endpoint used for signing up or registe
 }
 ```
 
-**Endpoint:** {{base_url}}/post/:id
+<sub>**Endpoint:** {{base_url}}/post/:id</sub>
 ```javascript
 // PATCH Method
 {
@@ -123,7 +110,7 @@ This is an example payload for `/signup` endpoint used for signing up or registe
 }
 ```
 
-**Endpoint:** {{base_url}}/post/:id
+<sub>**Endpoint:** {{base_url}}/post/:id</sub>
 ```javascript
 // DELETE Method
 {
@@ -135,34 +122,84 @@ This is an example payload for `/signup` endpoint used for signing up or registe
 </details>
 
 <details>
-<summary>This is an example payload for `/signin` endpoint used forsigning in or logging in.</summary>
+<summary>This is an example payload for `/engage` endpoint used forsigning in or logging in.</summary>
     
+<sub>**Endpoint:** {{base_url}}/engage</sub>
 ```javascript
+// GET Method
 {
     "email": "malaluanofficial16@gmail.com",
     "pass": "startups"
 }
 ```
+
+<sub>**Endpoint:** {{base_url}}/engage</sub>
+```javascript
+// POST Method
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
+```
+
+<sub>**Endpoint:** {{base_url}}/engage/:id</sub>
+```javascript
+// PATCH Method
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
+```
+
 </details>
 
-<details>
-<summary>This is an example payload for `/signin` endpoint used forsigning in or logging in.</summary>
-    
-```javascript
-{
-    "email": "malaluanofficial16@gmail.com",
-    "pass": "startups"
-}
-```
-</details>
 
 <details>
-<summary>This is an example payload for `/signin` endpoint used forsigning in or logging in.</summary>
+<summary>This is an example payload for `/comment` endpoint used forsigning in or logging in.</summary>
     
+<sub>**Endpoint:** {{base_url}}/comment</sub>
 ```javascript
+// GET Method
 {
     "email": "malaluanofficial16@gmail.com",
     "pass": "startups"
 }
 ```
+
+<sub>**Endpoint:** {{base_url}}/post/:condition</sub>
+```javascript
+// GET Method with Condition
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
+```
+
+<sub>**Endpoint:** {{base_url}}/comment</sub>
+```javascript
+// POST Method
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
+```
+
+<sub>**Endpoint:** {{base_url}}/comment/:id</sub>
+```javascript
+// PATCH Method
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
+```
+
+<sub>**Endpoint:** {{base_url}}/comment/:id</sub>
+```javascript
+// DELETE Method
+{
+    "email": "malaluanofficial16@gmail.com",
+    "pass": "startups"
+}
+```
+
 </details>
