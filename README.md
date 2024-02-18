@@ -32,7 +32,7 @@ The database schema is designed according to the Entity-Relationship Diagram (ER
 
 ## API Documentation
 Explore the API endpoints provided by the Icons Backend:
-- Endpoint URLs: [API Documentation](link-to-postman-docs)
+- Endpoint URLs: [API Documentation](files/api.documentation.md)
 - HTTP methods: GET, POST, PUT, DELETE
 - Request/response formats: JSON
 - Authentication: JWT
