@@ -10,11 +10,10 @@ module.exports = {
         email: req.body.email,
         pass: await userAuth.hashing(req.body.pass),
         role_fkid: req.body.role,
-        name: req.body.name,
       };
 
       const queryVariables = {
-        fields: "email, pass, role_fkid, name",
+        fields: "email, password, role_fkid",
         table_name: "tbl_account",
         values: textFormatter
           .parseValues(Object.values(formatValues))
@@ -51,30 +50,47 @@ module.exports = {
   authSignin: async (req, res) => {
     try {
       const queryVariables = {
-        fields: "username, email, pass, role_fkid",
+        fields: "username, email, password, role_fkid",
         table_name: "tbl_account",
         condition: `email = '${req.body.email}' OR username = '${req.body.email}'`,
-      };
-
-      services.get_w_condition(queryVariables, (error, results) => {
-        errorHandling.check_results(res, error, results);
-
-        if (results.length !== 0) {
-          const response = userAuth.signin(results, req.body);
-
-          if (response !== "valid") {
-            return res.status(200).json({
+      }
+  
+      try {
+        services.get_w_condition(queryVariables, async (error, results) => {
+          try {
+            errorHandling.check_results(res, error, results);
+            
+            if (results.length !== 0) {
+              const response = await userAuth.signin(results, req.body);
+              console.log(response);
+              if (response !== "valid") {
+                return res.status(200).json({
+                  success: 0,
+                  message: response,
+                });
+              } else {
+                return res.status(200).json({
+                  success: 1,
+                  message: response,
+                });
+              }
+            }
+          } catch (error) {
+            console.error("Error occurred during sign in:", error);
+            return res.status(500).json({
               success: 0,
-              message: response,
-            });
-          } else {
-            return res.status(200).json({
-              success: 1,
-              message: response,
+              message: "Error occurred during sign in",
+              error: error.message,
             });
           }
-        }
-      });
+        });
+      } catch (error) {
+        return res.status(500).json({
+          success: 0,
+          message: "Error occurred during sign in",
+          error: error.message,
+        });
+      }
     } catch (error) {
       return res.status(500).json({
         success: 0,
@@ -82,5 +98,5 @@ module.exports = {
         error: error.message,
       });
     }
-  },
-};
+  }};
+  
