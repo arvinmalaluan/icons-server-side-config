@@ -23,6 +23,7 @@ const handleView = (query_variables) => {
 
 module.exports = {
   getPost: (req, res) => {
+  
     const queryVariables = {
       fields: "*",
       table_name: "tbl_community_post",
@@ -38,13 +39,18 @@ module.exports = {
             success: 1,
             message: "Fetched successfully",
             data: results,
+            
           });
+
+        
         }
       }
+     
     );
   },
 
   getPostWCondition: (req, res) => {
+    console.log("wow");
     const queryVariables = {
       condition: req.params.condition,
     };
@@ -66,8 +72,8 @@ module.exports = {
   },
 
   createPost: (req, res) => {
+    console.log(req);
     const data = req.body;
-
     const query_variables = {
       table_name: "tbl_community_post",
       fields: Object.keys(data),
@@ -163,7 +169,7 @@ module.exports = {
   },
 
   // ! ------> Not yet working
-  getComment: (req, res) => {
+   getComment: (req, res) => {
     const query_variables = {
       fields: "",
       table_name: "tbl_comment",

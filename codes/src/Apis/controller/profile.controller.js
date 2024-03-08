@@ -2,6 +2,7 @@ const services = require("../services/sql.services");
 const formatter = require("../../Helpers/textFormatter");
 const errorHandling = require("../../Helpers/errorHandling");
 
+
 module.exports = {
   getProfile: (req, res) => {
     const query_variables = {
@@ -29,6 +30,8 @@ module.exports = {
       fields: Object.keys(req.body),
       values: formatter.parseValues(Object.values(req.body)),
     };
+
+    console.log(query_variables);
 
     services.post_(query_variables, (error, results) => {
       errorHandling.check_results(res, error, results);

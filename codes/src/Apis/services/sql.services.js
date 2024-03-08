@@ -43,8 +43,8 @@ module.exports = {
 
         return callBack(null, results);
       }
-    );
-  },
+      );
+    },
 
   patch_: (query_variables, callBack) => {
     db_conn.query(
@@ -68,6 +68,7 @@ module.exports = {
           post.title,
           post.author,
           post.timestamp,
+          post.image,
           post.content,
           profile.name AS author_name,
           profile.location AS author_location,
@@ -86,7 +87,7 @@ module.exports = {
       LEFT JOIN
           tbl_comment AS comment ON post.id = comment.community_post_fkid
       GROUP BY
-          post.id, post.title, post.author, post.content, profile.name, profile.location, engagement.is_liked, engagement.is_disliked;
+          post.id, post.title, post.image,post.author, post.content, profile.name, profile.location, engagement.is_liked, engagement.is_disliked;
       `,
       [],
       (error, results, fields) => {
