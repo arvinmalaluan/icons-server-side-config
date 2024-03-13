@@ -23,7 +23,7 @@ module.exports = {
         if (error) {
           return return_message(error);
         }
-
+        console.log(results);
         return return_message(null, results);
       }
     );
@@ -43,8 +43,8 @@ module.exports = {
 
         return callBack(null, results);
       }
-    );
-  },
+      );
+    },
 
   patch_: (query_variables, callBack) => {
     db_conn.query(
@@ -60,6 +60,35 @@ module.exports = {
     );
   },
 
+  patchengage_: (query_variables, callBack) => {
+    db_conn.query(
+      `UPDATE ${query_variables.table_name} SET ${query_variables.values} WHERE community_post_fkid = ${query_variables.id}`,
+      [],
+      (error, results) => {
+        if (error) {
+          return callBack(error);
+        }
+
+        return callBack(null, results);
+      }
+    );
+  },
+
+  delete_: (query_variables, callBack) => {
+    db_conn.query(
+      `DELETE FROM ${query_variables.table_name} WHERE community_post_fkid = ? AND account_fkid = ?`,
+      [query_variables.id, query_variables.id1],
+      (error, results) => {
+        if (error) {
+          return callBack(error);
+        }
+
+        return callBack(null, results);
+      }
+    );
+},
+
+
   get_community_posts_using_joins: (query_variables, callBack) => {
     db_conn.query(
       `
@@ -68,12 +97,13 @@ module.exports = {
           post.title,
           post.author,
           post.timestamp,
+          post.image,
           post.content,
           profile.name AS author_name,
           profile.location AS author_location,
           account.email AS account_email,
-          engagement.is_liked,
-          engagement.is_disliked,
+          SUM(CASE WHEN engagement.is_liked = 1 THEN 1 ELSE 0 END) AS like_count,
+          SUM(CASE WHEN engagement.is_disliked = 1 THEN 1 ELSE 0 END) AS dislike_count,
           COUNT(DISTINCT comment.id) AS comment_count
       FROM
           tbl_community_post AS post
@@ -86,7 +116,27 @@ module.exports = {
       LEFT JOIN
           tbl_comment AS comment ON post.id = comment.community_post_fkid
       GROUP BY
-          post.id, post.title, post.author, post.content, profile.name, profile.location, engagement.is_liked, engagement.is_disliked;
+          post.id, post.title, post.image,post.author, post.content, profile.name, profile.location, engagement.is_liked, engagement.is_disliked;
+      `,
+      [],
+      (error, results, fields) => {
+        if (error) {
+          return callBack(error);
+        }
+
+        return callBack(null, results);
+      }
+    );
+  },
+
+  get_count_engagement: (query_variables, callBack) => {
+    
+    db_conn.query(
+      `
+      SELECT is_liked, is_disliked, COUNT(*) AS count
+      FROM tbl_engagement
+      WHERE ${query_variables.condition}
+      GROUP BY is_liked, is_disliked;
       `,
       [],
       (error, results, fields) => {
@@ -143,3 +193,5 @@ module.exports = {
     );
   },
 };
+
+

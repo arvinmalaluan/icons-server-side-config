@@ -7,16 +7,22 @@ module.exports = {
         payload.email === fetched[0].email ||
         payload.email === fetched[0].username
       ) {
-        bcrypt.compare(payload.pass, fetched[0].pass, (error, response) => {
-          if (error) {
-            return "wrong password";
-          } else {
+        try {
+          const match = await bcrypt.compare(payload.pass, fetched[0].password);
+          if (match) {
             return "valid";
+          } else {
+            return "wrong password";
           }
-        });
+        } catch (error) {
+          console.error("Error comparing passwords:", error);
+          return "something went wrong";
+        }
       } else {
         return "something went wrong";
       }
+    } else {
+      return "something went wrong"; // Handle the case where fetched is empty
     }
   },
 
