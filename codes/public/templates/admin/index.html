@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./src/assets/style.css" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="main-frame d-flex">
+      <!-- Side Navigation -->
+      <div class="position-relative" id="side-bar">
+        <div class="toggle-side-pos">
+          <img
+            src="./src/assets/svgs/ArrowSideRight.svg"
+            class="svg-icon-size d-none"
+            alt=""
+            id="toggle-side-right"
+          />
+        </div>
+
+        <div class="toggle-side-pos">
+          <img
+            src="./src/assets/svgs/ArrowSideLeft.svg"
+            class="svg-icon-size"
+            alt=""
+            id="toggle-side-left"
+          />
+        </div>
+
+        <div class="w-260 border-r h-100 px-8 py-4">
+          <div>
+            <img
+              src="./src/assets/images/logo.png"
+              class="logo-styles"
+              alt=""
+            />
+          </div>
+
+          <div class="d-flex gap-4 row mt-4">
+            <div>
+              <p class="m-0 border-b text-xs mb-1">Dashboard</p>
+              <div class="d-flex row">
+                <a href="" class="active">Dashboard</a>
+              </div>
+            </div>
+
+            <div>
+              <p class="m-0 border-b text-xs mb-1">Manage</p>
+              <div class="d-flex row">
+                <a href="" class="default">Users</a>
+                <a href="" class="default">Articles</a>
+                <a href="" class="default">Programs</a>
+                <a href="" class="default">Queries</a>
+              </div>
+            </div>
+
+            <div>
+              <p class="m-0 border-b text-xs mb-1">Interact</p>
+              <div class="d-flex row">
+                <a href="" class="default">Messenger</a>
+                <a href="" class="default">Community</a>
+              </div>
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="w-100 overflow-y-scroll"></div>
+    </div>
+
+    <script src="./src/utils/onClick.js"></script>
+  </body>
+</html>

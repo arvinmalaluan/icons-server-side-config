@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../../src/assets/style.css" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <script src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../../../node_modules/highcharts/highcharts.js"></script>
+    <script src="../../../node_modules/highcharts/modules/exporting.js"></script>
+    <script src="../../../node_modules/highcharts/modules/accessibility.js"></script>
+    <script src="../../../node_modules/highcharts/modules/variwide.js"></script>
+  </head>
+  <body>
+    <div class="main-frame d-flex">
+      <!-- Side Navigation -->
+      <div class="position-relative" id="side-bar">
+        <div class="toggle-side-pos">
+          <img
+            src="../../src/assets/svgs/ArrowSideRight.svg"
+            class="svg-icon-size d-none"
+            alt=""
+            id="toggle-side-right"
+          />
+        </div>
+
+        <div class="toggle-side-pos">
+          <img
+            src="../../src/assets/svgs/ArrowSideLeft.svg"
+            class="svg-icon-size"
+            alt=""
+            id="toggle-side-left"
+          />
+        </div>
+
+        <div class="w-260 border-r h-100 px-8 py-4">
+          <div>
+            <img
+              src="../../src/assets/images/logo.png"
+              class="logo-styles"
+              alt=""
+            />
+          </div>
+
+          <div class="d-flex gap-4 row mt-4">
+            <div>
+              <p class="m-0 border-b text-xs mb-1">Dashboard</p>
+              <div class="d-flex row">
+                <a href="#" class="active">Dashboard</a>
+              </div>
+            </div>
+
+            <div>
+              <p class="m-0 border-b text-xs mb-1">Manage</p>
+              <div class="d-flex row">
+                <a href="./users.template.html" class="default">Users</a>
+                <a href="./articles.template.html" class="default">Articles</a>
+                <a href="./programs.template.html" class="default">Programs</a>
+                <a href="./queries.template.html" class="default">Queries</a>
+              </div>
+            </div>
+
+            <div>
+              <p class="m-0 border-b text-xs mb-1">Interact</p>
+              <div class="d-flex row">
+                <a href="./messenger.template.html" class="default"
+                  >Messenger</a
+                >
+                <a href="./community.template.html" class="default"
+                  >Community</a
+                >
+              </div>
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="w-100 overflow-y-scroll">
+        <div class="m-auto w-90 px-8">
+          <!-- Heading -->
+          <div class="w-100 mt-4">
+            <p class="h2 color-pri">Hi, welcome back!</p>
+            <p class="text-sm text-muted">
+              Welcome, Admin! Your Dashboard for Decisive Insights and
+              Effortless Control is now ready.
+            </p>
+
+            <div class="d-flex justify-content-between mt-4 border-b">
+              <div>
+                <button class="button-tab border-r">Overview</button>
+                <button class="button-tab border-r">Users</button>
+                <button class="button-tab border-r">Demographics</button>
+                <button class="button-tab">More</button>
+              </div>
+
+              <div>
+                <button class="button-tab border-r">Save Report</button
+                ><button class="button-tab">Print Report</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts -->
+          <div class="container-fluid gx-0 mt-4">
+            <div class="row gx-3 gy-3 overflow-hidden mb-4">
+              <div class="col-7">
+                <div class="border h-100 rounded d-flex flex-column">
+                  <div
+                    class="d-flex justify-content-between align-items-start p-sm"
+                  >
+                    <div>
+                      <p class="h5">Website Audience Metrics</p>
+                      <p class="text-xs text-muted">
+                        Audience to which the users belonged while on the
+                        current date range.
+                      </p>
+                    </div>
+
+                    <div class="btn-group" role="group">
+                      <button
+                        type="button"
+                        class="px-3 py-1 text-xs border rounded-left"
+                      >
+                        Left
+                      </button>
+                      <button type="button" class="px-3 py-1 text-xs border">
+                        Middle
+                      </button>
+                      <button
+                        type="button"
+                        class="px-3 py-1 text-xs border rounded-right"
+                      >
+                        Right
+                      </button>
+                    </div>
+                  </div>
+
+                  <div
+                    class="h-100"
+                    style="min-height: 250px"
+                    id="chart-container"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="col-5">
+                <div class="row gx-3 h-100">
+                  <div class="col-6 h-full">
+                    <div class="border rounded h-100 d-flex flex-column">
+                      <div class="p-sm">
+                        <p class="text-muted text-xs">Bounce Rate</p>
+                        <p class="h5">33%</p>
+                      </div>
+
+                      <div class="h-100">
+                        <div class="h--42" id="bounce-rate-container"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 h-full">
+                    <div class="border rounded h-100">
+                      <div class="p-sm">
+                        <p class="text-muted text-xs">Total Users</p>
+                        <p class="h5">50k</p>
+                      </div>
+
+                      <div class="h--42" id="total-users-container"></div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mt-3 h-full">
+                    <div class="border rounded h-100 position-relative">
+                      <div class="p-sm">
+                        <p class="text-muted text-xs">All Sessions</p>
+                        <p class="h5">50k</p>
+                      </div>
+
+                      <div class="h--42" id="all-sessions-container"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-5">
+                <div class="border rounded p-sm">
+                  <p class="h5">Page views by title page</p>
+                  <p class="text-xs text-muted">
+                    This report is based on 100% of sessions.
+                  </p>
+
+                  <div class="d-flex gap-2 flex-column mt-2">
+                    <div>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <p>Community Page</p>
+                        <p>12, 012</p>
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <p class="text-muted text-sm">api/v1/community</p>
+                        <p class="text-muted text-sm">31.74% (-100.00%)</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <p>Messenger Page</p>
+                        <p>12, 012</p>
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <p class="text-muted text-sm">api/v1/messenger</p>
+                        <p class="text-muted text-sm">31.74% (-100.00%)</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <p>Profile Page</p>
+                        <p>12, 012</p>
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <p class="text-muted text-sm">api/v1/profile</p>
+                        <p class="text-muted text-sm">31.74% (-100.00%)</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <p>Startups Profile Page</p>
+                        <p>12, 012</p>
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <p class="text-muted text-sm">api/v1/profile</p>
+                        <p class="text-muted text-sm">31.74% (-100.00%)</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <p>Partners Profile Page</p>
+                        <p>12, 012</p>
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <p class="text-muted text-sm">api/v1/profile</p>
+                        <p class="text-muted text-sm">31.74% (-100.00%)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-7">
+                <div class="border rounded p-sm h-100 d-flex flex-column">
+                  <div>
+                    <p class="h5">Demographics of User Sessions</p>
+                    <p class="text-xs text-muted">
+                      Exploring the Diversity of User Sessions through
+                      Demographic Insights in this Chart.
+                    </p>
+                  </div>
+
+                  <div class="h-100 d-flex justify-content-between">
+                    <div id="user-by-demo-container" class="w-100"></div>
+                    <div
+                      class="w-100 d-flex flex-column gap-2 justify-content-center"
+                    >
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example with label"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div class="progress-bar" style="width: 25%">25%</div>
+                      </div>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example with label"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div class="progress-bar" style="width: 25%">25%</div>
+                      </div>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example with label"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div class="progress-bar" style="width: 25%">25%</div>
+                      </div>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example with label"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div class="progress-bar" style="width: 25%">25%</div>
+                      </div>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example with label"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div class="progress-bar" style="width: 25%">25%</div>
+                      </div>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example with label"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div class="progress-bar" style="width: 25%">25%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-5">
+                <div class="row gx-0">
+                  <div class="col-12">
+                    <div class="p-sm border rounded">
+                      <p class="h6">Acquisition</p>
+                      <p class="text-muted text-xs">
+                        Tells you where your visitors originated from, such as
+                        search engines, social networks or website referrals.
+                      </p>
+
+                      <div class="d-flex gap-2 mt-3">
+                        <div class="w-100 d-flex gap-2 align-items-center">
+                          <div class="p-2 bg-primary">
+                            <div class="h-4 w-4">
+                              <img src="../assets/svgs/Chart.svg" alt="" />
+                            </div>
+                          </div>
+
+                          <div>
+                            <p class="text-xs">Bounce Rate</p>
+                            <p class="font-500">13.45%</p>
+                          </div>
+                        </div>
+                        <div class="w-100 d-flex align-items-start">
+                          <div class="w-100 d-flex gap-2 align-items-center">
+                            <div class="p-2 bg-primary">
+                              <div class="h-4 w-4">
+                                <img src="../assets/svgs/Chart.svg" alt="" />
+                              </div>
+                            </div>
+
+                            <div>
+                              <p class="text-xs">Bounce Rate</p>
+                              <p class="font-500">13.45%</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-3">
+                    <div class="p-sm border rounded">
+                      <p class="h6">Sessions</p>
+                      <p class="text-xs text-muted">
+                        Tells you where your visitors originated from, such as
+                        search engines, social networks or website referrals.
+                      </p>
+
+                      <div class="d-flex gap-2 mt-3">
+                        <div class="w-100 d-flex gap-2 align-items-center">
+                          <div class="p-2 bg-primary">
+                            <div class="h-4 w-4">
+                              <img src="../assets/svgs/Chart.svg" alt="" />
+                            </div>
+                          </div>
+
+                          <div>
+                            <p class="text-xs">Bounce Rate</p>
+                            <p class="font-500">13.45%</p>
+                          </div>
+                        </div>
+                        <div class="w-100 d-flex align-items-start">
+                          <div class="w-100 d-flex gap-2 align-items-center">
+                            <div class="p-2 bg-primary">
+                              <div class="h-4 w-4">
+                                <img src="../assets/svgs/Chart.svg" alt="" />
+                              </div>
+                            </div>
+
+                            <div>
+                              <p class="text-xs">Bounce Rate</p>
+                              <p class="font-500">13.45%</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-7">
+                <div class="border rounded p-sm h-100">
+                  <p class="h5">Most Active Users</p>
+                  <p class="text-xs text-muted mb-3">
+                    Exploring the Diversity of User Sessions through Demographic
+                    Insights in this Chart.
+                  </p>
+
+                  <table class="table caption-top">
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                          <span class="text-xs">ORGANIZATION</span>
+                        </th>
+                        <th scope="col">
+                          <span class="text-xs">ENTRANCES</span>
+                        </th>
+                        <th scope="col">
+                          <span class="text-xs">BOUNCE RATE</span>
+                        </th>
+                        <th scope="col"><span class="text-xs">EXIT</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Batangas State University</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <td>De La Salle University</td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <td>Cavite State University</td>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                      <tr>
+                        <td>Unebersidad ng Pilipinas</td>
+                        <td>14.02%</td>
+                        <td>18.02%</td>
+                        <td>7.25%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../src/utils/onClick.js"></script>
+    <script src="../../src/utils/charts/aud-met.js"></script>
+    <script src="../../src/utils/charts/bounce-rate.js"></script>
+    <script src="../../src/utils/charts/total-users.js"></script>
+    <script src="../../src/utils/charts/all-sessions.js"></script>
+    <script src="../../src/utils/charts/user-by-demographics.js"></script>
+  </body>
+</html>
